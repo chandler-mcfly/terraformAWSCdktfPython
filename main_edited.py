@@ -10,7 +10,7 @@ class MyStack(TerraformStack):
         AwsProvider(self, 'Aws', region='us-east-1')
 
         tag = {
-                "OHR_ID":"850047690",
+                "tag":"content",
                 "Created through":"Terraform"
         }
 
@@ -28,7 +28,7 @@ class MyStack(TerraformStack):
         
         newDefaultRouteTable = DefaultRouteTable(self, 'newDefaultRouteTable', default_route_table_id=Token().as_string(newVpc.default_route_table_id), tags=tag)
 
-        newKeyPair = KeyPair(self, 'newKeyPair', key_name="AccessKey", public_key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHXCpTsz95b2CbqqduP6FxM6ymQQcqm5g66kynw5qyvTvIMy7SUkTTjS1BCYguVG9d2ZQ7NMXWTCbFIp9bh3VyT9ZpF5N6GBgLLowiJAbkVpmOmoZkZ1NFPCmqgppIwdcECMDWI5hyqPND8hLsh2tq8kSAlCJNB0QE+2QNjMTy1QYQ32B90wLoi8y0GDTWlU4MD43dfznI1Mq99JppjezRiBWqWUJvlPpfHVbj5MaPXlyQNiN3GcE9MA9ME3dQ7XBumFNVBbDf/YvqRstG56fRUr/a0Tly/PVKLm/dHtKq0GwLCrjUnkmIbSBu6QMx7aBJF3jdpPAuohqOoGNdXd/ohOeprSkkGl5OcrIfimKq6BIsLxAK0k0YgfmB7wM1ZlL495x13BttimNqe/dvn/lo5/8O76PtIZ2VpFlWAEpqBVzTyhJNfWLMUevpMNdoRETmYwWB6UIo68S3h71sndEazMqZp67ikeqMtAdzytpmtX9+VikIXurZSRbtQX4Nys8= chandlermcfly@ubuntu")
+        newKeyPair = KeyPair(self, 'newKeyPair', key_name="AccessKey", public_key="")
 
         newInstance = Instance(self, 'newInstance',
           ami="ami-0739f8cdb239fe9ae", 
